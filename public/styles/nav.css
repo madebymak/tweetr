@@ -1,13 +1,12 @@
 #nav-bar {
-    list-style-type: none;
-    margin: 0;
-    padding: 0em 2em 0em 2em;
-    width: 100%;
     background-color: #00a087;
     color: #e8fdff;
-    height: 80px; /* Full height */
-    position: fixed; /* Make it stick, even on scroll */
-    overflow: auto; /* Enable scrolling if the sidenav has too much content */
+    height: 80px;
+    margin: 0;
+    overflow: auto;
+    padding: 0em 2em 0em 2em;
+    position: fixed;
+    width: 100%;
 }
 
 #nav-bar .logo {
@@ -18,6 +17,6 @@
 
 #nav-bar .header {
   float: left;
-  line-height: 80px ;
   font-size: 200%;
+  line-height: 80px ;
 }

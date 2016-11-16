@@ -1,17 +1,17 @@
 
 
 .new-tweet {
-  margin: 20px auto;
-  padding: 0em 2em 1em 2em;
-  width: 100%;
   background-color: #eee;
   border-radius: 8px;
-  overflow: hidden
+  margin: 20px auto;
+  overflow: hidden;
+  padding: 0em 2em 1em 2em;
+  width: 100%;
 }
 
 h2 {
-  padding: 0;
   border-bottom: 1px solid black;
+  padding: 0;
 }
 
 .textBox {
@@ -21,12 +21,11 @@ h2 {
 
 
 .Tweet {
-  float: left ;
   background-color: #eee;
+  float: left ;
 }
 
 .counter {
   float: right;
   margin-left: 200px;
-  font-size: 80%;
 }
