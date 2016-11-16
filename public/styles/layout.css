@@ -70,7 +70,7 @@ body {
   padding: 1px;
 }
 
-.RealName {
+.real-name {
   height: 75px;
 }
 
@@ -88,8 +88,13 @@ body {
 
 .icons {
   float: right;
+  opacity: 0.2;
+}
+
+.icons:hover {
   opacity: 1;
 }
+
 
 
 /*
