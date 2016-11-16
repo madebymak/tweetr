@@ -23,10 +23,51 @@ body {
 
 .container {
   margin: auto;
-  height: 450px;
+  height: 100%;
   background-color: white;
   width: 450px;
   padding: 100px 2em 2em 2em;
+}
+
+.tweet-timeline {
+  border: 1px solid red;
+  margin: 0 auto;
+  padding: 1em;
+  width: 100%;
+  background-color: #eee;
+  border-radius: 8px;
+  overflow: hidden
+}
+
+.avatar {
+  padding: 1px;
+  border: 1px solid red;
+  width: 73px;
+  height: 73px;
+  float: left;
+}
+
+.timeline-body {
+  background-color: white;
+  height: 100px;
+}
+
+.username {
+  border: 1px solid red;
+  float: right;
+}
+
+.RealName {
+  border: 1px solid red;
+  float: top;
+  padding: 0;
+}
+
+.footer {
+  padding: 5px;
+  background-color: white;
+  border-top: 2px solid #eee;
+
 }
 
 /*
