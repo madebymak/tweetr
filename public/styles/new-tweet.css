@@ -1,4 +1,8 @@
 
+h2 {
+  border-bottom: 1px solid black;
+  padding: 0;
+}
 
 .new-tweet {
   background-color: #eee;
@@ -10,16 +14,10 @@
   width: 100%;
 }
 
-h2 {
-  border-bottom: 1px solid black;
-  padding: 0;
-}
-
 .text-box {
   border: 3px solid #eee;
   width: 100%;
 }
-
 
 .tweet {
   background-color: #eee;

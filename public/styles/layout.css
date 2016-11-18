@@ -22,8 +22,8 @@ body {
 }
 
 article {
-  border-radius: 8px;
   border: 5px solid #eee;
+  border-radius: 8px;
   margin: 15px;
 }
 
@@ -104,8 +104,3 @@ article {
   opacity: 1;
 }
 
-
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
