@@ -8,8 +8,9 @@
 $(function() {
 
   $( ".compose-text" ).click(function() {
-  $( ".new-tweet" ).toggle( "slow" );
-});
+    $( ".new-tweet" ).toggle( "slow" );
+    $( ".text-box" ).focus();
+  });
 
 //serialize the submitted text
   // $( "form" ).on( "submit", function( event ) {
@@ -33,13 +34,9 @@ $(function() {
         loadTweets(data);
       }
     })
-    // .done(function (newMessage) {
-    //   // The code inside the callback is the pessimistic code
-    //   renderMessage(newMessage);
-    // });
-    // This is where optimistic code goes - inside the function
-    // that is handling the user event, that is, the form submission
-    // theForm.find('input[name=messageText]').val('');
+    $( ".text-box" ).val("");
+
+
   });
 
 

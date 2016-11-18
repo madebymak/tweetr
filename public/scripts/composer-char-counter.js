@@ -6,20 +6,17 @@ $( document ).ready(function() {
   var length = $(this).val().length;
   var length = charMax - length;
 
-
-  $(".counter").text(length)
-  // if no characters are entered
-    if (length === null){
-      $(".counter").text("Nothing entered.").text
-    }
-
     if (length <= 140){
       $(".counter").text(length).css("color", "black").text;
+      $('.tweet').prop('disabled', false);
     }
 
     if (length < 0){
-      $(".counter").text(length).css("color", "red").text("Too many.");
+      $( ".counter" ).text(length).css("color", "red").text("Too many.");
+       $('.tweet').prop('disabled', true);
     }
+
+    //$(".counter").text(length)
 
   });
 });
