@@ -7,6 +7,10 @@
 // Test / driver code (temporary). Eventually will get this from the server.
 $(function() {
 
+  $( ".compose-text" ).click(function() {
+  $( ".new-tweet" ).toggle( "slow" );
+});
+
 //serialize the submitted text
   // $( "form" ).on( "submit", function( event ) {
   //   event.preventDefault();
@@ -55,8 +59,6 @@ $(function() {
   }
 
  loadTweets();
-
-
 
   ///////////////
   function renderTweets(tweets) {

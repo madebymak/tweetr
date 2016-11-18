@@ -3,6 +3,7 @@
 .new-tweet {
   background-color: #eee;
   border-radius: 8px;
+  display: none;
   margin: 20px auto;
   overflow: hidden;
   padding: 0em 2em 1em 2em;
