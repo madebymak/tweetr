@@ -12,14 +12,6 @@ $(function() {
     $( ".text-box" ).focus();
   });
 
-//serialize the submitted text
-  // $( "form" ).on( "submit", function( event ) {
-  //   event.preventDefault();
-  //   $.post("http://localhost:8080/tweets", {content: $( this ).serialize()});
-
-  //   // console.log( $( this ).serialize() );
-  // });
-
 
   $('form[action="/tweets"]').on('submit', function (event) {
     event.preventDefault();
@@ -90,9 +82,10 @@ $(function() {
     $('.tweet-timeline').prepend(
     `<article>
           <header>
-            <div class="header"><img class="avatar" src="${avatar}">
+            <div class="tweet-box-header"><img class="avatar" src="${avatar}">
               <div class= "user-handle">${userHandle} </div>
               <div class= "real-name-box"><h1 class="name">${userName} </h1></div>
+
             </div>
           </header>
           <div class="timeline-body">${escape(tweetText)}</div>
@@ -104,7 +97,6 @@ $(function() {
                 <i class="fa fa-heart"></i>
               </div>
             </div>
-            <div class="blank"></div>
           </footer>
         </article>`
     );
