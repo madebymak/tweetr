@@ -20,3 +20,20 @@
   font-size: 200%;
   line-height: 80px ;
 }
+
+#nav-bar .compose-text {
+  background-color: white;
+  border: 0px;
+  border-radius: 10px;
+  float: right;
+  font-size: 20px;
+  height: 50px;
+  margin: 15px;
+  padding: 5px;
+  width: 160px;
+}
+
+#nav-bar .compose-text:hover {
+  background-color: #eee;
+}
+
