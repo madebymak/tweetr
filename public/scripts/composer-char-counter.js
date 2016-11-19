@@ -1,5 +1,10 @@
 $( document ).ready(function() {
- console.log("load ok!");
+
+  $(".text-box").blur(function() {
+    if( $(this).val().length === 0 ) {
+        $(".counter").text(length).css("color", "red").text("Empty!");
+    }
+});
 
   $(".text-box").keyup(function (x) {
     var charMax = 140;
@@ -12,9 +17,10 @@ $( document ).ready(function() {
     }
 
     if (length < 0){
-      $( ".counter" ).text(length).css("color", "red").text("Too many.");
+      $( ".counter" ).text(length).css("color", "red").text("Too many!");
       $('.tweet').prop('disabled', true);
     }
+
   });
 });
 
