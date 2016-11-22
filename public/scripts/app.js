@@ -13,39 +13,29 @@ $(function() {
       url: formInput.attr('action'),
       data: formInput.serialize(),
       success: function (data){
-        // console.log(Date.now()%1000000, "data from reply to our POST", data);
         $( ".text-box" ).val("");
         loadTweets(data);
       }
     })
-
-
   });
 
   function loadTweets() {
-    // console.log(Date.now()%1000000, "just called loadTweets, haven't done any work yet");
     $.ajax({
       dataType: "JSON",
       url: "http://localhost:8080/tweets/",
       method: "GET",
       success: function (data) {
-        // console.log("loadTweets data", data)
         renderTweets(data);
       }
     });
-    // console.log(Date.now()%1000000, "leaving loadTweets, good night and good luck");
   };
 
   function renderTweets(tweets) {
-    $('.tweet-timeline').empty();
-    console.log(tweets);
-
-    // TODO: delete all pre-existing tweets from the webpage, before the next-line redraws all of them
+    $(".tweet-timeline").empty();
     tweets.forEach(function (data) {
-      // console.log(Date.now()%1000000, 'about to call createTweetElement');
       createTweetElement(data);
-    });
-  };
+    })
+  }
 
   function createTweetElement(tweet) {
     var avatar = tweet.user.avatars.regular;
@@ -55,12 +45,12 @@ $(function() {
     var timePosted = timeSince(tweet.created_at);
 
     function escape(str) {
-      var div = document.createElement('div');
+      var div = document.createElement("div");
       div.appendChild(document.createTextNode(str));
       return div.innerHTML;
     }
 
-    $('.tweet-timeline').prepend(     // TODO: Jeremy says that this 'prepend' should not be on this line
+    $(".tweet-timeline").prepend(
       `<article>
         <header>
           <div class="tweet-box-header">
@@ -121,5 +111,4 @@ $(function() {
   }
 
   loadTweets();
-  // console.log(Date.now()%1000000, "done first pass; now it is nap time until a callback fires");
 });

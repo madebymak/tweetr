@@ -4,7 +4,7 @@ $( document ).ready(function() {
     if( $(this).val().length === 0 ) {
         $(".counter").text(length).css("color", "red").text("Empty!");
     }
-});
+  });
 
   $(".text-box").keyup(function (x) {
     var charMax = 140;
@@ -20,7 +20,6 @@ $( document ).ready(function() {
       $( ".counter" ).text(length).css("color", "red").text("Too many!");
       $('.tweet').prop('disabled', true);
     }
-
   });
 });
 
