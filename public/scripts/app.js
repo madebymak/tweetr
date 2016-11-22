@@ -13,30 +13,37 @@ $(function() {
       url: formInput.attr('action'),
       data: formInput.serialize(),
       success: function (data){
-        console.log(data);
+        // console.log(Date.now()%1000000, "data from reply to our POST", data);
+        $( ".text-box" ).val("");
         loadTweets(data);
       }
     })
 
-    $( ".text-box" ).val("");
 
   });
 
   function loadTweets() {
-    var getTweets = $.ajax({
+    // console.log(Date.now()%1000000, "just called loadTweets, haven't done any work yet");
+    $.ajax({
       dataType: "JSON",
       url: "http://localhost:8080/tweets/",
       method: "GET",
       success: function (data) {
+        // console.log("loadTweets data", data)
         renderTweets(data);
       }
     });
+    // console.log(Date.now()%1000000, "leaving loadTweets, good night and good luck");
   };
 
   function renderTweets(tweets) {
+    $('.tweet-timeline').empty();
+    console.log(tweets);
+
+    // TODO: delete all pre-existing tweets from the webpage, before the next-line redraws all of them
     tweets.forEach(function (data) {
+      // console.log(Date.now()%1000000, 'about to call createTweetElement');
       createTweetElement(data);
-      return;
     });
   };
 
@@ -53,7 +60,7 @@ $(function() {
       return div.innerHTML;
     }
 
-    $('.tweet-timeline').prepend(
+    $('.tweet-timeline').prepend(     // TODO: Jeremy says that this 'prepend' should not be on this line
       `<article>
         <header>
           <div class="tweet-box-header">
@@ -114,4 +121,5 @@ $(function() {
   }
 
   loadTweets();
+  // console.log(Date.now()%1000000, "done first pass; now it is nap time until a callback fires");
 });
