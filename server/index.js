@@ -6,6 +6,8 @@ const PORT          = 8080;
 const express       = require("express");
 const bodyParser    = require("body-parser");
 const app           = express();
+const DataHelpers = require("./lib/data-helpers.js")(db);
+const tweetsRoutes = require("./routes/tweets")(DataHelpers);
 
 //added
 const MongoClient = require("mongodb").MongoClient;
@@ -22,14 +24,9 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
 
   console.log(`Connected to mongodb: ${MONGODB_URI}`);
 
-  const DataHelpers = require("./lib/data-helpers.js")(db);
-
-  const tweetsRoutes = require("./routes/tweets")(DataHelpers);
-
   app.use("/tweets", tweetsRoutes);
 
   app.listen(PORT, () => {
     console.log("Example app listening on port " + PORT);
   });
 });
-
