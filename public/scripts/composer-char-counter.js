@@ -16,13 +16,11 @@ $( document ).ready(function() {
       $('.tweet').prop('disabled', false);
     }
 
-    // if (length === 140){
-    //   $(".counter").text(length).css("color", "red").text("Empty!");
-    // }
-
     if (length < 0){
       $( ".counter" ).text(length).css("color", "red").text("Too many!");
-      $('.tweet').attr('disabled', true);
+      $('.tweet').prop('disabled', true);
     }
   });
 });
+
+

@@ -3,7 +3,6 @@ $(function() {
   $( ".compose-text" ).click(function() {
     $( ".new-tweet" ).toggle( "slow" );
     $( ".text-box" ).focus();
-
   });
 
   $('form[action="/tweets"]').on('submit', function (event) {
@@ -15,7 +14,6 @@ $(function() {
       data: formInput.serialize(),
       success: function (data){
         $( ".text-box" ).val("");
-        $( ".counter" ).empty("").append("140");
         loadTweets(data);
       }
     })
@@ -24,7 +22,7 @@ $(function() {
   function loadTweets() {
     $.ajax({
       dataType: "JSON",
-      url: "/tweets",
+      url: "http://localhost:8080/tweets/",
       method: "GET",
       success: function (data) {
         renderTweets(data);
@@ -77,7 +75,6 @@ $(function() {
     );
 
   function timeSince(date) {
-    //changes these numbers to variables
     var seconds = Math.floor((new Date() - date) / 1000);
     var interval = Math.floor(seconds / 31536000);
 
