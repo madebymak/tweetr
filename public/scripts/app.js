@@ -81,29 +81,34 @@ $(function() {
     var seconds = Math.floor((new Date() - date) / 1000);
     var interval = Math.floor(seconds / 31536000);
 
+    var minutes = 60;
+    var hours = 3600;
+    var days = 86400;
+    var years = 259200;
+
     if (interval > 1) {
         return interval + " years";
     }
 
-    interval = Math.floor(seconds / 2592000);
+    interval = Math.floor(seconds / years);
 
     if (interval > 1) {
         return interval + " months";
     }
 
-    interval = Math.floor(seconds / 86400);
+    interval = Math.floor(seconds / days);
 
     if (interval > 1) {
         return interval + " days";
     }
 
-    interval = Math.floor(seconds / 3600);
+    interval = Math.floor(seconds / hours);
 
     if (interval > 1) {
         return interval + " hours";
     }
 
-    interval = Math.floor(seconds / 60);
+    interval = Math.floor(seconds / minutes);
 
     if (interval > 1) {
         return interval + " minutes";
