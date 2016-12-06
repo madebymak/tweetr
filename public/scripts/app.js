@@ -7,6 +7,9 @@ $(function() {
 
   $('form[action="/tweets"]').on('submit', function (event) {
     event.preventDefault();
+      if( $(".text-box").val().length === 0 ) {
+          $(".counter").text(length).css("color", "red").text("Empty!");
+      }
     var formInput = $(this);
     $.ajax({
       method: formInput.attr('method'),
@@ -14,6 +17,7 @@ $(function() {
       data: formInput.serialize(),
       success: function (data){
         $( ".text-box" ).val("");
+        $(".counter").text("140");
         loadTweets(data);
       }
     })
@@ -22,7 +26,7 @@ $(function() {
   function loadTweets() {
     $.ajax({
       dataType: "JSON",
-      url: "http://localhost:8080/tweets/",
+      url: "/tweets",
       method: "GET",
       success: function (data) {
         renderTweets(data);
